@@ -1,3 +1,5 @@
+import "../../assets/partials/global.scss"
+import "../../assets/partials/typography.scss"
 import MohanMuruge from "../../assets/images/Mohan-muruge.jpg";
 import SearchIcon from "../../assets/Icons/search.svg";
 import BrainflixLogo from "../../assets/Logo/BrainFlix-logo.svg";

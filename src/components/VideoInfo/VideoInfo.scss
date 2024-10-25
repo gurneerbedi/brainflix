@@ -1,0 +1,42 @@
+@use '../../assets/partials/global' as *;
+@use '../../assets/partials/typography' as *;
+@use '../../assets/partials/fonts' as *;
+
+.info__title{
+    display: flex;
+    @include page-header;
+}
+.info__headline{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    border-bottom:1px solid #E1E1E1 ; //Mercury
+}
+
+.info__container1{
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+
+    @include section-header;
+}
+
+.info__container2{
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    height: 1rem;
+    width: 1rem;
+}
+
+.info__views-container, .info__likes-container{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.info__description{
+   text-align: left;
+}

@@ -1,3 +1,6 @@
+@use '../../assets/partials/global' as *;
+@use '../../assets/partials/typography' as *;
+@use '../../assets/partials/fonts' as *;
 
 .nav{
     display: flex;
@@ -33,6 +36,7 @@ outline: none;
     padding-left: 32px;
     padding-right: 32px;
     border-radius: 4px;
+    @include mobile__buttons-labels;
 
     &:hover{
         background: #0065ad; //Brainflix-darkblue
