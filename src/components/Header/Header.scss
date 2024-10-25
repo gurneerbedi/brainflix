@@ -1,0 +1,51 @@
+
+.nav{
+    display: flex;
+    margin-left: 1rem;
+    justify-content: space-between;
+}
+
+.nav__logo{
+    height: 25px;
+    width: 120px;
+}
+
+.nav__search-bar{
+outline: none;
+}
+
+.nav__search-icon{
+    height: 1rem;
+    width: 1rem;
+    position: absolute;
+
+}
+.nav__search-container{
+    position: relative;
+    display: inline-block;
+}
+.nav__button{
+    background-color: #0095ff; //Brainflix-blue
+    border-color: white;
+    color: white;
+    height: 40px;
+    width: 150px;
+    padding-left: 32px;
+    padding-right: 32px;
+    border-radius: 4px;
+
+    &:hover{
+        background: #0065ad; //Brainflix-darkblue
+    }
+}
+.nav__mohan{
+    border-radius: 50%;
+   height: 36px;
+   width: 30px;
+}
+
+.nav__container{
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
