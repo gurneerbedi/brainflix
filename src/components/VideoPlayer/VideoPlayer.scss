@@ -1,29 +1,21 @@
-
+@use '../../assets/partials/__global.scss' as *;
+@use '../../assets/partials/typography' as *;
+@use '../../assets/partials/fonts' as *;
 
 .video-player__preview
 {
     
     
     aspect-ratio: 16 / 9;  
-    width: 100%;
+    //width: 100%;
 }
 
 .video-player {
     
     background-color: black;
-    padding: 0 4rem;
-    padding-bottom: 24px;
-    
+    //padding: 0 4rem;
+    //padding-bottom: 24px;
+    width: 100%;
     
 }
 
-/*
-.video-player__controls{
-    background-color: red;
-}
-.video-player__scrub{
-   height: 16px;
-   width: 16px;
-   color: white;
-}
-*/
