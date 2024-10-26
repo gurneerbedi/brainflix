@@ -19,13 +19,12 @@ function App() {
   
   // videocomments.forEach(comment => {
   //   console.log(comment.name);
-
   // })
   
   return (
     <>
       <Header />
-      <VideoPlayer />
+      <VideoPlayer selected={selected} />
       <VideoInfo video={currentVideo} />
       <CommentsForm />
       {/* <Comments videocomments/> */}
