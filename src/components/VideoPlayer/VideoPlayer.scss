@@ -4,18 +4,18 @@
 
 .video-player__preview
 {
-    
-    
     aspect-ratio: 16 / 9;  
-    //width: 100%;
+    width: 100%;
+    overflow: hidden;
+    
 }
 
 .video-player {
     
     background-color: black;
-    //padding: 0 4rem;
-    //padding-bottom: 24px;
-    width: 100%;
+    padding: 0 4rem;
+    padding-bottom: 24px;
+    max-width: 100%;
     
 }
 

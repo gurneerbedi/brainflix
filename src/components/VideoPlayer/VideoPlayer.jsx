@@ -14,7 +14,7 @@ export default function VideoPlayer() {
         controls
         poster="https://unit-3-project-api-0a5620414506.herokuapp.com/images/image0.jpg"
       ></video>
-      <div className="video-player__controls">
+      {/* <div className="video-player__controls">
         <img className="video-player__play" src={PlayIcon} alt="play-icon" />
         <img className="video-player__scrub" src={ScrubIcon} alt="scrub-icon" />
         <img
@@ -22,7 +22,7 @@ export default function VideoPlayer() {
           src={FullscreenIcon}
           alt="fullscreen-icon"
         />
-      </div>
+      </div> */}
     </div>
   );
 }
