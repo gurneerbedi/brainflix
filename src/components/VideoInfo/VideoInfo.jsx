@@ -4,15 +4,15 @@ import "../../assets/partials/typography.scss"
 import LikesIcon from "../../assets/Icons/likes.svg";
 import ViewsIcon from "../../assets/Icons/views.svg";
 
-export default function VideoInfo({ video }) {
+export default function VideoInfo({ selected }) {
   return (
     <div className="info">
-      <h1 className="info__title">{video.title}</h1>
+      <h1 className="info__title">{selected.title}</h1>
       <div className="info__headline">
         <div className="info__container1">
-          <p className="info__author">By {video.channel}</p>
+          <p className="info__author">By {selected.channel}</p>
           <p className="info__date">
-            {new Date(video.timestamp).toLocaleDateString()}
+            {new Date(selected.timestamp).toLocaleDateString()}
           </p>
         </div>
         <div className="info__container2">
@@ -22,7 +22,7 @@ export default function VideoInfo({ video }) {
               src={ViewsIcon}
               alt="views-logo"
             />
-            <p className="info__views-count">{video.views}</p>
+            <p className="info__views-count">{selected.views}</p>
           </div>
           <div className="info__likes-container">
             <img
@@ -30,12 +30,12 @@ export default function VideoInfo({ video }) {
               src={LikesIcon}
               alt="likes-logo"
             />
-             <p className="info__likes-count">{video.likes}</p>
+             <p className="info__likes-count">{selected.likes}</p>
           </div>
         </div>
       </div>
       <div className="info__description">
-        <p className="info__description-paragraph">{video.description}</p>
+        <p className="info__description-paragraph">{selected.description}</p>
       </div>
     </div>
   );

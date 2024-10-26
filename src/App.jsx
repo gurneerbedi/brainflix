@@ -25,7 +25,7 @@ function App() {
     <>
       <Header />
       <VideoPlayer selected={selected} />
-      <VideoInfo video={currentVideo} />
+      <VideoInfo selected={selected} />
       <CommentsForm />
       {/* <Comments videocomments/> */}
       <SideBar videos = {video} setSelected={setSelected} />
