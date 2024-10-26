@@ -11,6 +11,11 @@ import videodata from "./data/video-details.json";
 function App() {
   const currentVideo = videodata[0];
   const videocomments = currentVideo.comments;
+
+  console.log("render App");
+  const [selected, setSelected] = useState(videodata[0]);
+
+  const video = videodata.filter((d) => d !== selected);
   
   // videocomments.forEach(comment => {
   //   console.log(comment.name);
@@ -24,7 +29,7 @@ function App() {
       <VideoInfo video={currentVideo} />
       <CommentsForm />
       {/* <Comments videocomments/> */}
-      <SideBar videos = {videodata}/>
+      <SideBar videos = {video} setSelected={setSelected} />
     </>
   );
 }
