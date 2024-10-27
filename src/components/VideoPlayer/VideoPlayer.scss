@@ -1,21 +1,27 @@
-@use '../../assets/partials/__global.scss' as *;
-@use '../../assets/partials/typography' as *;
-@use '../../assets/partials/fonts' as *;
+@use "../../assets/partials/__global" as *;
+@use "../../assets/partials/typography" as *;
+@use "../../assets/partials/fonts" as *;
+@use "../../assets/partials/__variables" as *;
+@use "../../assets/partials/__mixins" as *;
 
 .video-player__preview
 {
     aspect-ratio: 16 / 9;  
     width: 100%;
-    overflow: hidden;
-    
+
+    @include desktop{
+       max-width: 90%;
+       padding: 0 2rem;
+    }
 }
 
 .video-player {
-    
-    background-color: black;
-    padding: 0 4rem;
-    padding-bottom: 24px;
-    max-width: 100%;
-    
+    display: flex;
+    justify-content: center;
+
+    @include tablet{
+        background-color: black;
+        padding: 0 4rem;
+    }  
 }
 
