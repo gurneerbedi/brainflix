@@ -1,9 +1,14 @@
 import "../../assets/partials/__global.scss";
 import "../../assets/partials/typography.scss";
+import "../../assets/partials/__variables.scss";
+import "../../assets/partials/__mixins.scss";
+import "./Header.scss";
+
 import MohanMuruge from "../../assets/images/Mohan-muruge.jpg";
 import SearchIcon from "../../assets/Icons/search.svg";
 import BrainflixLogo from "../../assets/Logo/BrainFlix-logo.svg";
-import "./Header.scss";
+import UploadIcon from "../../assets/Icons/upload.svg";
+
 export default function Header() {
   return (
     <div className="nav">
@@ -23,9 +28,16 @@ export default function Header() {
             src={SearchIcon}
             alt="search-icon"
           />
-        </div>
-        <button className="nav__button">UPLOAD</button>
-        <img className="nav__mohan" src={MohanMuruge} alt="Mohan-muruge" />
+          <img className="nav__mohan" src={MohanMuruge} alt="Mohan-muruge" />
+          </div>
+           <div className="nav__button-container">
+           <button className="nav__button">UPLOAD</button>
+           <img
+            className="nav__upload-icon"
+            src={UploadIcon}
+            alt="upload-icon"
+          />
+          </div>
       </div>
     </div>
   );
