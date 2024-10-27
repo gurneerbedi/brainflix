@@ -1,3 +1,65 @@
-@use '../../assets/partials/__global' as *;
-@use '../../assets/partials/typography' as *;
-@use '../../assets/partials/fonts' as *;
+@use "../../assets/partials/__global" as *;
+@use "../../assets/partials/typography" as *;
+@use "../../assets/partials/fonts" as *;
+@use "../../assets/partials/__variables" as *;
+@use "../../assets/partials/__mixins" as *;
+
+
+.comment__container{
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    border-bottom: 1px solid $Mercury;
+    padding-bottom: 1rem;
+
+    @include tablet{
+        padding-bottom: 24px;
+    }
+
+}
+.comment__avatars{
+    border-radius: 50%;
+    background-color: $Mercury;
+    flex-shrink: 0; 
+    width: 36px;
+    height: 36px;
+    margin-top: .75rem;
+    flex-grow: 0;
+
+    @include tablet{
+        height: 40px;
+        width: 40px;
+    }
+}
+
+.comment__content{
+    flex-grow: 1;
+}
+
+.comment__heading{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.comment__name{
+    color: $BrainFlix-DarkBlack;
+    @include mobile__sub-header;
+
+    @include tablet{
+        @include sub-header;
+    }
+}
+
+.comment__timestamp{
+    color: $Silver;
+    @include mobile__body;
+
+    @include tablet{
+        @include body;
+    }
+}
+
+.comment__comment{
+    margin: 0;
+}

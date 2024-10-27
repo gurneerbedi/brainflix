@@ -8,12 +8,13 @@ export default function Comments({comments}) {
     <div className = "comments__list">
         {comments.map((comment) => (
         <article className="comment__container" key={comment.id}>
-          <div className="comment__avatar"></div>
+          <div className="comment__avatars"></div>
           <div className="comment__content">
-            <div className="comment__heading"></div>
+            <div className="comment__heading">
             <h1 className="comment__name">{comment.name}</h1>
             <div className="comment__timestamp">
               {new Date(comment.timestamp).toLocaleDateString()}
+            </div>
             </div>
             <p className="comment__comment">{comment.comment}</p>
           </div>

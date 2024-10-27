@@ -1,40 +1,103 @@
-@use '../../assets/partials/__global' as *;
-@use '../../assets/partials/typography' as *;
-@use '../../assets/partials/fonts' as *;
+@use "../../assets/partials/__global" as *;
+@use "../../assets/partials/typography" as *;
+@use "../../assets/partials/fonts" as *;
+@use "../../assets/partials/__variables" as *;
+@use "../../assets/partials/__mixins" as *;
 
-.info__title{
-    display: flex;
+.info{
+&__title {
+  display: flex;
+  border-bottom: 1px solid $Mercury;
+  padding-top: 24px;
+  padding-bottom: 1rem;
+  @include mobile__page-header;
+
+  @include tablet {
     @include page-header;
+    padding-bottom: 0;
+    border-bottom: none;
+  }
 }
-.info__headline{
-    display: flex;
+&__headline {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  //padding-bottom: 1rem;
+  border-bottom: 1px solid $Mercury; //Mercury
+
+  @include tablet{
+    padding-bottom: 0;
+    padding-top: 0;
+  }
+}
+
+&__author {
+  @include mobile__sub-header;
+  @include tablet {
+    @include sub-header;
+  }
+}
+&__date {
+  @include mobile__body;
+  color: $Silver;
+
+  @include tablet {
+    @include body;
+  }
+}
+
+&__container1 {
+  display: flex;
+  flex-direction: column;
+
+  @include tablet {
     flex-direction: row;
     justify-content: space-between;
-    padding-bottom: 1rem;
-    padding-top: 1rem;
-    border-bottom:1px solid #E1E1E1 ; //Mercury
+    gap: 1rem;
+  }
 }
 
-.info__container1{
-    display: flex;
+&__container2 {
+  display: flex;
+  flex-direction: column;
+
+  @include tablet {
+    flex-direction: row;
     justify-content: space-between;
     gap: 1rem;
-
-    @include section-header;
+  }
 }
 
-.info__container2{
-    display: flex;
-    justify-content: space-between;
-    gap: 1rem;   
+&__views-container,
+&__likes-container {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  @include mobile__body;
+  color: $Silver;
+
+  @include tablet {
+    @include body;
+  }
 }
 
-.info__views-container, .info__likes-container{
-    display: flex;
-    gap: 1rem;
-    align-items: center;
+&__description {
+  text-align: left;
+  padding-bottom: 1rem;
+  @include mobile__body;
+
+  @include tablet {
+    @include body;
+    padding-bottom: 24px;
+  }
 }
 
-.info__description{
-   text-align: left;
+&__description-comments-total{
+    @include mobile__sub-header;
+
+    @include tablet{
+        @include sub-header;
+    }
+}
+
 }

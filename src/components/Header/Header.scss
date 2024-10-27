@@ -26,10 +26,10 @@
 &__search-bar {
   outline: none;
   border: 1px solid $Mercury;
-  height: auto;
   background-color: $Alabaster;
   position: relative;
   padding-left: 2rem;
+  width: 100%;
 }
 
 &__search-icon {
@@ -46,7 +46,6 @@
   display: flex;
   justify-content: space-between;
   gap: 1rem;
-  flex-grow: 1;
 
   @include tablet{
     flex-grow: 0;
@@ -59,12 +58,14 @@
   border-color: white;
   color: white;
   height: 40px;
+  width: 100%;
   padding-left: 32px;
   padding-right: 32px;
   border-radius: 4px;
   @include mobile__buttons-labels;
 
   position: relative;
+  z-index: 1;
   padding-left: 2rem;
 
   &:hover {
@@ -73,8 +74,8 @@
 }
 &__upload-icon {
     position: absolute;
-    transform: translateX(-440%);
-    padding-top: .5rem;
+    z-index: 2;
+    padding: .5rem .5rem;
 }
 
 &__upload-icon img {
@@ -100,12 +101,11 @@
   justify-content: space-between;
   gap: 1rem;
   padding-bottom: 1rem;
-  flex-grow: 1;
+  width: 100%;
 
   @include tablet {
     flex-direction: row;
     align-items: center;
-    flex-grow: 0;
   }
 }
 }

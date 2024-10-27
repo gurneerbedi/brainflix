@@ -36,6 +36,7 @@ export default function VideoInfo({ selected }) {
       </div>
       <div className="info__description">
         <p className="info__description-paragraph">{selected.description}</p>
+        <p className = "info__description-comments-total">{selected.comments.length} Comments</p>
       </div>
     </div>
   );

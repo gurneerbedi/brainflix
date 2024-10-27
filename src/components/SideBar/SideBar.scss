@@ -1,6 +1,8 @@
-@use '../../assets/partials/__global' as *;
-@use '../../assets/partials/typography' as *;
-@use '../../assets/partials/fonts' as *;
+@use "../../assets/partials/__global" as *;
+@use "../../assets/partials/typography" as *;
+@use "../../assets/partials/fonts" as *;
+@use "../../assets/partials/__variables" as *;
+@use "../../assets/partials/__mixins" as *;
 
 
 .side-bar{
@@ -8,13 +10,13 @@
     flex-direction: column;
     justify-content: space-between;
     gap: 1rem;
-    //width: 50%;
 }
 
 .side-bar__heading{
     @include sub-header;
-    color: #afafaf; //silver
+    color: $Silver; //silver
     display: flex;
+    padding-top: 1rem;
     
 }
 
@@ -38,8 +40,16 @@
 
 .side-bar__title{
     @include sub-header;
+
+    @include tablet{
+        @include sub-header;
+    }
 }
 
  .side-bar__channel{
-@include body;
+@include mobile__body;
+
+@include tablet{
+    @include body;
+}
  }

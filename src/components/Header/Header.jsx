@@ -29,15 +29,15 @@ export default function Header() {
             alt="search-icon"
           />
           <img className="nav__mohan" src={MohanMuruge} alt="Mohan-muruge" />
-          </div>
-           <div className="nav__button-container">
-           <button className="nav__button">UPLOAD</button>
-           <img
+        </div>
+        <div className="nav__button-container">
+        <img
             className="nav__upload-icon"
             src={UploadIcon}
             alt="upload-icon"
           />
-          </div>
+          <button className="nav__button">UPLOAD</button>
+        </div>
       </div>
     </div>
   );
