@@ -10,9 +10,9 @@
     flex-direction: column;
     justify-content: space-between;
     gap: 1rem;
-}
 
-.side-bar__heading{
+
+&__heading{
     @include sub-header;
     color: $Silver; //silver
     display: flex;
@@ -20,25 +20,25 @@
     
 }
 
-.side-bar__video{
+&__video{
     display: flex;
     gap: 1rem;
   
 }
 
-.side-bar__thumbnail{
-    height: 100px;
-    width: 150px;
+&__thumbnail{
+    height: 6.25rem;
+    width: 9.375rem;
     border-radius: 4px;
 }
 
-.side-bar__info{
+&__info{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
 }
 
-.side-bar__title{
+&__title{
     @include sub-header;
 
     @include tablet{
@@ -46,10 +46,11 @@
     }
 }
 
- .side-bar__channel{
+ &__channel{
 @include mobile__body;
 
 @include tablet{
     @include body;
 }
  }
+}

@@ -14,7 +14,7 @@
         padding-bottom: 1rem;
     
         @include tablet{
-            padding-bottom: 24px;
+            padding-bottom: 1.5rem;
         }
     
     }
@@ -22,14 +22,14 @@
         border-radius: 50%;
         background-color: $Mercury;
         flex-shrink: 0; 
-        width: 36px;
-        height: 36px;
+        width: 2.25rem;
+        height: 2.25rem;
         margin-top: .75rem;
         flex-grow: 0;
     
         @include tablet{
-            height: 40px;
-            width: 40px;
+            height: 2.5rem;
+            width: 2.5rem;
         }
     }
     

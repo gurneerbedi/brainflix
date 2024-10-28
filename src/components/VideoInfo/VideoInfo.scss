@@ -8,13 +8,13 @@
 &__title {
   display: flex;
   border-bottom: 1px solid $Mercury;
-  padding-top: 24px;
+  padding-top: 1.5rem;
   padding-bottom: 1rem;
   @include mobile__page-header;
 
   @include tablet {
     @include page-header;
-    padding-top: 36px;
+    padding-top: 2.25rem;
     padding-bottom: 0;
     border-bottom: none;
   }
@@ -88,7 +88,7 @@
 
   @include tablet {
     @include body;
-    padding-bottom: 24px;
+    padding-bottom: 1.5rem;
   }
 }
 
