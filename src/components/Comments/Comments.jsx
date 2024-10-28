@@ -1,6 +1,9 @@
 import "./Comments.scss";
 import "../../assets/partials/__global.scss";
 import "../../assets/partials/typography.scss";
+import { formatDistanceToNow} from 'date-fns';
+
+
 
 export default function Comments({comments}) {
     
@@ -13,7 +16,9 @@ export default function Comments({comments}) {
             <div className="comment__heading">
             <h1 className="comment__name">{comment.name}</h1>
             <div className="comment__timestamp">
-              {new Date(comment.timestamp).toLocaleDateString()}
+              {comment.timestamp && formatDistanceToNow(new Date(comment.timestamp), {addSuffix: true})}
+              
+              {/* {new Date(comment.timestamp).toLocaleDateString()} */}
             </div>
             </div>
             <p className="comment__comment">{comment.comment}</p>
