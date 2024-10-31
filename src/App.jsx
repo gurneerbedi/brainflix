@@ -20,9 +20,9 @@ function App() {
 
   return (
     <>
-    <Upload></Upload>
+    {/* <Upload></Upload> */}
 
-      {/* <div className="component__header">
+      <div className="component__header">
         <Header />
       </div>
       <div className="component__video-player">
@@ -45,7 +45,7 @@ function App() {
         <div className="component__side-bar">
           <SideBar videos={video} setSelected={setSelected} />
         </div>
-      </div> */}
+      </div>
     </>
   );
 }

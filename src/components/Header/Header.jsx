@@ -3,6 +3,7 @@ import "../../assets/partials/typography.scss";
 import "../../assets/partials/__variables.scss";
 import "../../assets/partials/__mixins.scss";
 import "./Header.scss";
+import { NavLink } from "react-router-dom";
 
 import MohanMuruge from "../../assets/images/Mohan-muruge.jpg";
 import SearchIcon from "../../assets/Icons/search.svg";
@@ -12,7 +13,10 @@ import UploadIcon from "../../assets/Icons/upload.svg";
 export default function Header() {
   return (
     <div className="nav">
-      <img className="nav__logo" src={BrainflixLogo} alt="brainflix-logo" />
+      <NavLink to = "/">
+      <img className="nav__logo" src={BrainflixLogo} alt="brainflix-logo"
+       />
+       </NavLink>
       <div className="nav__container">
         <div className="nav__search-container">
           <input
