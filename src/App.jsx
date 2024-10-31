@@ -7,6 +7,7 @@ import CommentsForm from "./components/CommentsForm/CommentsForm";
 import Comments from "./components/Comments/Comments";
 import SideBar from "./components/SideBar/SideBar";
 import videodata from "./data/video-details.json";
+import Upload from "./pages/Upload/Upload"
 
 function App() {
   const currentVideo = videodata[0];
@@ -19,7 +20,9 @@ function App() {
 
   return (
     <>
-      <div className="component__header">
+    <Upload></Upload>
+
+      {/* <div className="component__header">
         <Header />
       </div>
       <div className="component__video-player">
@@ -42,7 +45,7 @@ function App() {
         <div className="component__side-bar">
           <SideBar videos={video} setSelected={setSelected} />
         </div>
-      </div>
+      </div> */}
     </>
   );
 }
