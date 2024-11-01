@@ -12,6 +12,7 @@ import Upload from "./pages/Upload/Upload"
 function App() {
   const currentVideo = videodata[0];
   const videocomments = currentVideo.comments;
+ 
 
   console.log("render App");
   const [selected, setSelected] = useState(videodata[0]);
@@ -20,8 +21,6 @@ function App() {
 
   return (
     <>
-    {/* <Upload></Upload> */}
-
       <div className="component__header">
         <Header />
       </div>
