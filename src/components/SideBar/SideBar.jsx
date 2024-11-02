@@ -1,15 +1,22 @@
 import "./SideBar.scss";
 import "../../assets/partials/__global.scss";
 import "../../assets/partials/typography.scss";
+import { useNavigate} from "react-router-dom";
 
-const SideBar = ({ videos, setSelected}) => {
+const SideBar = ({ videos}) => {
+
+  const navigate = useNavigate();
+  const handleVideoClick = (id) => {
+    navigate(`/video-upload/${id}`);
+  };
+
   return (
     <div className="side-bar">
         <h1 className = "side-bar__heading">NEXT VIDEOS</h1>
       {videos.map((video) => (
-        <div className="side-bar__video" key={video.id} onClick={() => {
-            setSelected(video);
-        }}>
+        <div className="side-bar__video" key={video.id} onClick={() => 
+            handleVideoClick(video.id)}
+        >
           <img
             className="side-bar__thumbnail"
             src={video.image}
