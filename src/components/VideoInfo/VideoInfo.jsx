@@ -7,31 +7,9 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
-export default function VideoInfo({ ids }) {
-  const BASE_URL = "https://unit-3-project-api-0a5620414506.herokuapp.com/";
-  const api_key = "e1bce57d-0ebd-4421-9c13-971e9c9fc49e";
+export default function VideoInfo({ video }) {
 
-  console.log("rendering...");
-
-  const [video, setVideo] = useState(null);
-
-  useEffect(() => {
-    async function getVideos() {
-      try {
-        const response = await axios.get(
-          `${BASE_URL}videos/${ids}?api_key=${api_key}`
-        );
-        console.log("i'm getting data from api");
-        setVideo(response.data);
-      } catch (error) {
-        console.log("Error getVideos:" + error);
-      }
-    }
-
-    getVideos();
-  }, [ids]);
   if (!video) return <p>Loading VideoInfo...</p>;
-
   return (
     <>
       <div className="info">
@@ -65,7 +43,7 @@ export default function VideoInfo({ ids }) {
         <div className="info__description">
           <p className="info__description-paragraph">{video.description}</p>
           <p className="info__description-comments-total">
-            {video.comments.length} Comments
+            {video.comments?.length || 0} Comments
           </p>
         </div>
       </div>
