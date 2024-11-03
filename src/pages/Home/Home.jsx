@@ -13,16 +13,17 @@ import SideBar from "../../components/SideBar/SideBar";
 import videodata from "../../data/video-details.json";
 
 function Home() {
-  const currentVideo = videodata[0];
-  const [selected, setSelected] = useState(currentVideo);
-  const video = videodata.filter((d) => d !== selected);
-  const defaultID = currentVideo.id;
+  //const currentVideo = videodata[0];
+  //const [selected, setSelected] = useState(currentVideo);
+  //const video = videodata.filter((d) => d !== selected);
+  const defaultID = "84e96018-4022-434e-80bf-000ce4cd12b8";
   const BASE_URL = "https://unit-3-project-api-0a5620414506.herokuapp.com/";
   const api_key = "e1bce57d-0ebd-4421-9c13-971e9c9fc49e";
 
   console.log("rendering HomePage...");
 
   const [videoData, setVideoData] = useState([]);
+  const [videoList, setVideoList] = useState([]);
 
   useEffect(() => {
     async function getVideoData() {
@@ -37,7 +38,20 @@ function Home() {
       }
     }
 
+    async function getVideoList(){
+      try {
+        const response = await axios.get(
+          `${BASE_URL}videos?api_key=${api_key}`
+        );
+        console.log("i'm getting video list data from api");
+        setVideoList(response.data);
+      } catch (error) {
+        console.log("Error getVideoList:" + error);
+      }
+    }
+
     getVideoData();
+    getVideoList();
   }, [defaultID]);
 
   const commentsData = videoData.comments;
@@ -65,7 +79,7 @@ function Home() {
           </div>
         </div>
         <div className="component__side-bar">
-          <SideBar videos={video} setSelected={setSelected} />
+          <SideBar videos={videoList} />
         </div>
       </div>
     </>

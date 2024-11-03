@@ -17,8 +17,11 @@ function VideoDetails() {
   console.log("rendering Video...");
 
   const [videoDetails, setVideoDetails] = useState([]);
+  //const currentVideo = videodata[0];
+  //const defaultID = currentVideo.id;
 
   useEffect(() => {
+    //const videoId = objID || defaultID;
     async function getVideoDetails() {
       try {
         const response = await axios.get(
