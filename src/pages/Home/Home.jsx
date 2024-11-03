@@ -11,12 +11,9 @@ import videodata from "../../data/video-details.json";
 
 function Home() {
   const currentVideo = videodata[0];
-  const videocomments = currentVideo.comments;
-  console.log("render App");
-  const [selected, setSelected] = useState(videodata[0]);
-
+  const [selected, setSelected] = useState(currentVideo);
   const video = videodata.filter((d) => d !== selected);
-  const defaultID = "84e96018-4022-434e-80bf-000ce4cd12b8";
+  const defaultID = currentVideo.id;
 
   return (
     <>
@@ -24,7 +21,7 @@ function Home() {
         <Header />
       </div>
       <div className="component__video-player">
-        <VideoPlayer selected={selected} />
+        <VideoPlayer ids = {defaultID} />
       </div>
 
       <div className="components">
@@ -33,11 +30,11 @@ function Home() {
             <VideoInfo ids={defaultID} />
           </div>
           <div className="component__comments-form">
-            <CommentsForm />
+            <CommentsForm/>
           </div>
           <div className="component__comments">
             {" "}
-            <Comments comments={selected.comments} />
+            <Comments ids ={defaultID} />
           </div>
         </div>
         <div className="component__side-bar">
