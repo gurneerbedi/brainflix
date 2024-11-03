@@ -4,64 +4,62 @@
 @use "../../assets/partials/__variables" as *;
 @use "../../assets/partials/__mixins" as *;
 
+.comment {
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    border-bottom: 1px solid $Mercury;
+    padding-bottom: 1rem;
 
-.comment{
-    &__container{
-        display: flex;
-        justify-content: space-between;
-        gap: 1rem;
-        border-bottom: 1px solid $Mercury;
-        padding-bottom: 1rem;
-    
-        @include tablet{
-            padding-bottom: 1.5rem;
-        }
-    
+    @include tablet {
+      padding-bottom: 1.5rem;
     }
-    &__avatars{
-        border-radius: 50%;
-        background-color: $Mercury;
-        flex-shrink: 0; 
-        width: 2.25rem;
-        height: 2.25rem;
-        margin-top: .75rem;
-        flex-grow: 0;
-    
-        @include tablet{
-            height: 2.5rem;
-            width: 2.5rem;
-        }
+  }
+  &__avatars {
+    border-radius: 50%;
+    background-color: $Mercury;
+    flex-shrink: 0;
+    width: 2.25rem;
+    height: 2.25rem;
+    margin-top: 0.75rem;
+    flex-grow: 0;
+
+    @include tablet {
+      height: 2.5rem;
+      width: 2.5rem;
     }
-    
-    &__content{
-        flex-grow: 1;
+  }
+
+  &__content {
+    flex-grow: 1;
+  }
+
+  &__heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__name {
+    color: $BrainFlix-DarkBlack;
+    @include mobile__sub-header;
+
+    @include tablet {
+      @include sub-header;
     }
-    
-    &__heading{
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+  }
+
+  &__timestamp {
+    color: $Silver;
+    @include mobile__body;
+
+    @include tablet {
+      @include body;
     }
-    
-    &__name{
-        color: $BrainFlix-DarkBlack;
-        @include mobile__sub-header;
-    
-        @include tablet{
-            @include sub-header;
-        }
-    }
-    
-    &__timestamp{
-        color: $Silver;
-        @include mobile__body;
-    
-        @include tablet{
-            @include body;
-        }
-    }
-    
-    &__comment{
-        margin: 0;
-    }
+  }
+
+  &__comment {
+    margin: 0;
+  }
 }

@@ -110,12 +110,12 @@
 
 .comment__textarea {
   color: $BrainFlix-DarkBlack;
-  padding: .5rem;
+  padding: 0.5rem;
 
-  &::placeholder{
+  &::placeholder {
     color: $BrainFlix-Black;
     @include mobile__body;
-    @include tablet{
+    @include tablet {
       @include body;
     }
   }

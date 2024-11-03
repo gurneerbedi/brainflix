@@ -4,53 +4,49 @@
 @use "../../assets/partials/__variables" as *;
 @use "../../assets/partials/__mixins" as *;
 
+.side-bar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
 
-.side-bar{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 1rem;
-
-
-&__heading{
+  &__heading {
     @include sub-header;
     color: $Silver; //silver
     display: flex;
     padding-top: 1rem;
-    
-}
+  }
 
-&__video{
+  &__video {
     display: flex;
     gap: 1rem;
-  
-}
+  }
 
-&__thumbnail{
+  &__thumbnail {
     height: 6.25rem;
     width: 9.375rem;
     border-radius: 4px;
-}
+  }
 
-&__info{
+  &__info {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-}
+  }
 
-&__title{
+  &__title {
     @include sub-header;
 
-    @include tablet{
-        @include sub-header;
+    @include tablet {
+      @include sub-header;
     }
-}
+  }
 
- &__channel{
-@include mobile__body;
+  &__channel {
+    @include mobile__body;
 
-@include tablet{
-    @include body;
-}
- }
+    @include tablet {
+      @include body;
+    }
+  }
 }

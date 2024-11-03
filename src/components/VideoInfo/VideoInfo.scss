@@ -4,100 +4,99 @@
 @use "../../assets/partials/__variables" as *;
 @use "../../assets/partials/__mixins" as *;
 
-.info{
-&__title {
-  display: flex;
-  border-bottom: 1px solid $Mercury;
-  padding-top: 1.5rem;
-  padding-bottom: 1rem;
-  @include mobile__page-header;
+.info {
+  &__title {
+    display: flex;
+    border-bottom: 1px solid $Mercury;
+    padding-top: 1.5rem;
+    padding-bottom: 1rem;
+    @include mobile__page-header;
 
-  @include tablet {
-    @include page-header;
-    padding-top: 2.25rem;
-    padding-bottom: 0;
-    border-bottom: none;
+    @include tablet {
+      @include page-header;
+      padding-top: 2.25rem;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
   }
-}
-&__headline {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  border-bottom: 1px solid $Mercury; //Mercury
-
-  @include tablet{
-    padding-bottom: 0;
-    padding-top: 0;
-  }
-}
-
-&__author {
-  @include mobile__sub-header;
-  @include tablet {
-    @include sub-header;
-  }
-}
-&__date {
-  @include mobile__body;
-  color: $Silver;
-
-  @include tablet {
-    @include body;
-  }
-}
-
-&__container1 {
-  display: flex;
-  flex-direction: column;
-
-  @include tablet {
+  &__headline {
+    display: flex;
     flex-direction: row;
     justify-content: space-between;
+    border-bottom: 1px solid $Mercury; //Mercury
+
+    @include tablet {
+      padding-bottom: 0;
+      padding-top: 0;
+    }
+  }
+
+  &__author {
+    @include mobile__sub-header;
+    @include tablet {
+      @include sub-header;
+    }
+  }
+  &__date {
+    @include mobile__body;
+    color: $Silver;
+
+    @include tablet {
+      @include body;
+    }
+  }
+
+  &__container1 {
+    display: flex;
+    flex-direction: column;
+
+    @include tablet {
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+  }
+
+  &__container2 {
+    display: flex;
+    flex-direction: column;
+
+    @include tablet {
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+  }
+
+  &__views-container,
+  &__likes-container {
+    display: flex;
     gap: 1rem;
+    align-items: center;
+    @include mobile__body;
+    color: $Silver;
+
+    @include tablet {
+      @include body;
+    }
   }
-}
 
-&__container2 {
-  display: flex;
-  flex-direction: column;
+  &__description {
+    text-align: left;
+    padding-bottom: 1rem;
+    @include mobile__body;
 
-  @include tablet {
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 1rem;
+    @include tablet {
+      @include body;
+      padding-bottom: 1.5rem;
+    }
   }
-}
 
-&__views-container,
-&__likes-container {
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-  @include mobile__body;
-  color: $Silver;
-
-  @include tablet {
-    @include body;
-  }
-}
-
-&__description {
-  text-align: left;
-  padding-bottom: 1rem;
-  @include mobile__body;
-
-  @include tablet {
-    @include body;
-    padding-bottom: 1.5rem;
-  }
-}
-
-&__description-comments-total{
+  &__description-comments-total {
     @include mobile__sub-header;
 
-    @include tablet{
-        @include sub-header;
+    @include tablet {
+      @include sub-header;
     }
-}
-
+  }
 }

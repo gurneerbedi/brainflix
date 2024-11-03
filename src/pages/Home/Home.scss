@@ -4,23 +4,22 @@
 @use "../../assets/partials/__variables" as *;
 @use "../../assets/partials/__mixins" as *;
 
-.components{
-    @include desktop{
-      display: flex;
-      justify-content: space-between;
-      gap: 1rem;
-        }
-    }
-  
-    .sub-components{
-      @include desktop{
-        border-right: 1px solid $Mercury;
-        display: flex;
-        flex-direction: column;
-        width: 75%;
-        padding-left: 4rem;
-        padding-right: 1rem;
-        margin-right: 1rem;
-      }
-     
-    }
+.components {
+  @include desktop {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+}
+
+.sub-components {
+  @include desktop {
+    border-right: 1px solid $Mercury;
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    padding-left: 4rem;
+    padding-right: 1rem;
+    margin-right: 1rem;
+  }
+}

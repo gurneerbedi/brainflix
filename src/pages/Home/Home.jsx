@@ -16,6 +16,7 @@ function Home() {
   const [selected, setSelected] = useState(videodata[0]);
 
   const video = videodata.filter((d) => d !== selected);
+  const defaultID = "84e96018-4022-434e-80bf-000ce4cd12b8";
 
   return (
     <>
@@ -27,17 +28,17 @@ function Home() {
       </div>
 
       <div className="components">
-        <div className = "sub-components">
-        <div className="component__video-info">
-          <VideoInfo selected={selected} />
-        </div>
-        <div className="component__comments-form">
-          <CommentsForm />
-        </div>
-        <div className="component__comments">
-          {" "}
-          <Comments comments={selected.comments} />
-        </div>
+        <div className="sub-components">
+          <div className="component__video-info">
+            <VideoInfo ids={defaultID} />
+          </div>
+          <div className="component__comments-form">
+            <CommentsForm />
+          </div>
+          <div className="component__comments">
+            {" "}
+            <Comments comments={selected.comments} />
+          </div>
         </div>
         <div className="component__side-bar">
           <SideBar videos={video} setSelected={setSelected} />

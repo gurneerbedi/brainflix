@@ -4,146 +4,139 @@
 @use "../../assets/partials/__variables" as *;
 @use "../../assets/partials/__mixins" as *;
 
-.upload{
+.upload {
+  @include desktop {
+    margin: 0 4rem;
+  }
 
-    @include desktop{
-        margin: 0 4rem;
+  &__container {
+    @include desktop {
+      display: flex;
+      flex-direction: row;
+      gap: 1rem;
+      width: 90%;
+      border-top: 1px solid $Mercury;
+
+      padding-bottom: 2rem;
+      flex-grow: 0;
+    }
+  }
+  &__heading {
+    color: $BrainFlix-DarkBlack;
+    @include mobile__page-header;
+    border-top: 1px solid $Mercury;
+    padding-top: 24px;
+    margin-top: 0;
+
+    @include tablet {
+      @include page-header;
+      border-bottom: 1px solid $Mercury;
+      padding-bottom: 24px;
+    }
+  }
+
+  &__thumbnail-heading,
+  &__form-heading {
+    color: $Silver;
+    @include mobile__section-header;
+
+    @include tablet {
+      @include section-header;
+    }
+  }
+  &__form-cancel {
+    color: $BrainFlix-Blue;
+    @include mobile__section-header;
+
+    @include tablet {
+      @include section-header;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;
+
+    @include desktop {
+      width: 75%;
+    }
+  }
+
+  &__thumbnail-video {
+    aspect-ratio: 16 / 9;
+    width: 100%;
+
+    @include tablet {
+      width: 50%;
     }
 
-    &__container{
-        @include desktop{
-            display: flex;
-            flex-direction: row;
-            gap: 1rem;
-            width: 90%;
-            border-top: 1px solid $Mercury;
-            
-            padding-bottom: 2rem;
-            flex-grow: 0;
-            
-        }
+    @include desktop {
+      width: 35%;
+      height: fit-content;
+      align-items: center;
+      margin-top: 1rem;
     }
-    &__heading{
-        color: $BrainFlix-DarkBlack;
-        @include mobile__page-header;
-        border-top: 1px solid $Mercury;
-        padding-top: 24px;
-        margin-top: 0;
+  }
 
-        @include tablet{
-            @include page-header;
-            border-bottom: 1px solid $Mercury;
-            padding-bottom: 24px;
-        }
-    }
+  &__form-button {
+    background-color: #0095ff; //Brainflix-blue
+    border-color: white;
+    color: white;
+    height: 2.5rem;
+    width: 100%;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    border-radius: 4px;
+    @include mobile__buttons-labels;
 
-    &__thumbnail-heading, &__form-heading{
-            color: $Silver;
-            @include mobile__section-header;
+    position: relative;
+    z-index: 1;
+    padding-left: 2rem;
 
-            @include tablet{
-                @include section-header;
-            }
-        }
-    &__form-cancel{
-        color: $BrainFlix-Blue;
-        @include mobile__section-header;
-
-        @include tablet{
-            @include section-header;
-        }
+    &:hover {
+      background: #0065ad; //Brainflix-darkblue
     }
 
-    &__form{
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        gap: 1rem;
-
-        @include desktop{
-            width: 75%;
-        }
-        
+    @include tablet {
+      width: auto;
     }
+  }
 
-    &__thumbnail-video{
-        aspect-ratio: 16 / 9;
-        width: 100%;
-
-        @include tablet{
-            width: 50%;
-        }
-
-        @include desktop{
-            width: 35%;
-            height: fit-content;
-            align-items: center;
-            margin-top: 1rem;
-        }
-    }
-
-    &__form-button {
-        background-color: #0095ff; //Brainflix-blue
-        border-color: white;
-        color: white;
-        height: 2.5rem;
-        width: 100%;
-        padding-left: 2rem;
-        padding-right: 2rem;
-        border-radius: 4px;
-        @include mobile__buttons-labels;
-    
-        position: relative;
-        z-index: 1;
-        padding-left: 2rem;
-    
-        &:hover {
-          background: #0065ad; //Brainflix-darkblue
-        }
-
-        @include tablet{
-            width: auto;
-        }
-      }
-
-      &__form-cancel{
-        display: flex;
-        justify-content: center;
-
-      }
-
+  &__form-cancel {
+    display: flex;
+    justify-content: center;
+  }
 }
 
-.upload__form-description #form-description-bar, .upload__form-title #form-title-bar  {
-    outline: none;
-    border: 1px solid $Mercury;
-    background-color: $Alabaster;
-    position: relative;
-    padding-left: 1rem;
-    width: 100%;
-    height: 2rem;
+.upload__form-description #form-description-bar,
+.upload__form-title #form-title-bar {
+  outline: none;
+  border: 1px solid $Mercury;
+  background-color: $Alabaster;
+  position: relative;
+  padding-left: 1rem;
+  width: 100%;
+  height: 2rem;
 
-    &::placeholder {
-      color: $BrainFlix-Black;
-    }
-
+  &::placeholder {
+    color: $BrainFlix-Black;
   }
+}
 
-  .upload__form-description #form-description-bar{
-    height: 6rem;
-    padding-bottom: 4rem;
+.upload__form-description #form-description-bar {
+  height: 6rem;
+  padding-bottom: 4rem;
+}
+
+.upload__options {
+  @include tablet {
+    border-top: 1px solid $Mercury;
+    padding-top: 1rem;
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 2rem;
+    @include buttons-labels;
   }
-
-  .upload__options{
-    @include tablet{
-        border-top: 1px solid $Mercury;
-        padding-top: 1rem;
-        display: flex;
-        flex-direction: row-reverse;
-        gap: 2rem;
-        @include buttons-labels;     
-    }
-  }
-   
-  
-
+}

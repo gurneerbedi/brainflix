@@ -13,10 +13,9 @@ import UploadIcon from "../../assets/Icons/upload.svg";
 export default function Header() {
   return (
     <div className="nav">
-      <NavLink to = "/">
-      <img className="nav__logo" src={BrainflixLogo} alt="brainflix-logo"
-       />
-       </NavLink>
+      <NavLink to="/">
+        <img className="nav__logo" src={BrainflixLogo} alt="brainflix-logo" />
+      </NavLink>
       <div className="nav__container">
         <div className="nav__search-container">
           <input
@@ -35,7 +34,7 @@ export default function Header() {
           <img className="nav__mohan" src={MohanMuruge} alt="Mohan-muruge" />
         </div>
         <div className="nav__button-container">
-        <img
+          <img
             className="nav__upload-icon"
             src={UploadIcon}
             alt="upload-icon"
