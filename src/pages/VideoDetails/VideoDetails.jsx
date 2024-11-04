@@ -18,6 +18,7 @@ function VideoDetails() {
 
   const [videoDetails, setVideoDetails] = useState([]);
   const [videoList, setVideoList] = useState([]);
+  
 
   useEffect(() => {
     async function getVideoDetails() {
@@ -48,6 +49,10 @@ function VideoDetails() {
     getVideoList();
   }, [objID]);
 
+  //need to update sidebar list so that the default video is not displayed in the sidebar
+
+  const updatedVideoList = videoList.filter(video => video.id !== (objID || defaultID));
+
   const videoDetailsComments = videoDetails.comments;
   //note to refactor the code and use one page component for video-details + homepage
   //sidebar will only render if objID doesn't exist, ie !objID returns true if objID is undefined so true && true will render the sidebar
@@ -73,7 +78,7 @@ function VideoDetails() {
           </div>
           {!objID && (
             <div className="component__side-bar">
-              <SideBar videos={videoList} />
+              <SideBar videos={updatedVideoList} />
             </div>
           )}
         </div>
