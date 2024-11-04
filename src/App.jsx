@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./App.scss";
 import ReactDOM from "react-dom/client";
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
-import Home from "./pages/Home/Home";
+//import Home from "./pages/Home/Home";
 import Upload from "./pages/Upload/Upload";
 import VideoDetails from "./pages/VideoDetails/VideoDetails";
 
@@ -12,7 +12,7 @@ function App() {
     <>
   <BrowserRouter>
   <Routes>
-    <Route path="/" element={<Home/>}/>
+    <Route path="/" element={<VideoDetails/>}/>
     <Route path = "video-upload" element={<Upload/>} />
     <Route path= "/videos/:objID" element={<VideoDetails/>}/>
   </Routes>
