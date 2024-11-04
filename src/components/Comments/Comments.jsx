@@ -11,6 +11,8 @@ export default function Comments({ commentsData = [] }) {
   //the commentsData.map runs into an error while waiting
 
   console.log("rendering...Comments");
+
+ 
   return (
     <div className="comments__list">
       {commentsData.map((comment) => (

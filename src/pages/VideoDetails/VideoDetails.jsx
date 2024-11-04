@@ -18,6 +18,7 @@ function VideoDetails() {
 
   const [videoDetails, setVideoDetails] = useState([]);
   const [videoList, setVideoList] = useState([]);
+ 
   
 
   useEffect(() => {
@@ -57,6 +58,11 @@ function VideoDetails() {
   //note to refactor the code and use one page component for video-details + homepage
   //sidebar will only render if objID doesn't exist, ie !objID returns true if objID is undefined so true && true will render the sidebar
 
+  const [commentsData, setCommentsData] = useState([])
+  const handleNewComment = (newComment) => {
+    setCommentsData(prevComments => [...prevComments, newComment]);
+  };
+
   return (
     <>
       <div className="component__header">
@@ -71,7 +77,7 @@ function VideoDetails() {
             <VideoInfo video={videoDetails} />
           </div>
           <div className="component__comments-form">
-            <CommentsForm />
+            <CommentsForm commentsData={videoDetailsComments} OnCommenting = {handleNewComment} />
           </div>
           <div className="component__comments-info">
             <Comments commentsData={videoDetailsComments} />
