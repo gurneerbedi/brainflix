@@ -5,8 +5,16 @@ import "../../assets/partials/__mixins.scss";
 import "./Upload.scss";
 import UploadPreview from "../../assets/images/Upload-video-preview.jpg";
 import Header from "../../components/Header/Header";
+import PublishIcon from "../../assets/Icons/publish.svg";
+import { useNavigate } from "react-router";
 
-export default function Upload() {
+export default function Upload() 
+{
+  const navigate = useNavigate();
+  function UploadAlert() {
+    alert("Your video was uploaded successfully!");
+    navigate("/");
+  } 
   return (
     <>
       <Header></Header>
@@ -43,7 +51,14 @@ export default function Upload() {
               />
             </div>
             <div className="upload__options">
-              <button className="upload__form-button">PUBLISH</button>
+            <div className="upload__button-container">
+          <img
+            className="upload__publish-icon"
+            src={PublishIcon}
+            alt="publish-icon"
+          />
+          <button className="upload__form-button" onClick={UploadAlert}>PUBLISH</button>
+          </div>
               <h3 className="upload__form-cancel">CANCEL</h3>
             </div>
           </div>

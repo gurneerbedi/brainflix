@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 const SideBar = ({ videos }) => {
   const navigate = useNavigate();
   const handleVideoClick = (id) => {
-    navigate(`/video-details/${id}`);
+    navigate(`/videos/${id}`);
   };
 
   return (

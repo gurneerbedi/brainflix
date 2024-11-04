@@ -34,12 +34,14 @@ export default function Header() {
           <img className="nav__mohan" src={MohanMuruge} alt="Mohan-muruge" />
         </div>
         <div className="nav__button-container">
+          <NavLink to= "/video-upload">
           <img
             className="nav__upload-icon"
             src={UploadIcon}
             alt="upload-icon"
           />
           <button className="nav__button">UPLOAD</button>
+          </NavLink>
         </div>
       </div>
     </div>
