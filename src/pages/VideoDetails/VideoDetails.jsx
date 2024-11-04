@@ -14,8 +14,6 @@ function VideoDetails() {
   const BASE_URL = "https://unit-3-project-api-0a5620414506.herokuapp.com/";
   const api_key = "e1bce57d-0ebd-4421-9c13-971e9c9fc49e";
 
-  console.log("rendering Video...");
-
   const [videoDetails, setVideoDetails] = useState([]);
   const [videoList, setVideoList] = useState([]);
  
@@ -28,10 +26,10 @@ function VideoDetails() {
         const response = await axios.get(
           `${BASE_URL}videos/${vidID}?api_key=${api_key}`
         );
-        console.log("i'm getting video details data from api");
+        
         setVideoDetails(response.data);
       } catch (error) {
-        console.log("Error getVideoDetails:" + error);
+        console.error("Error getVideoDetails:" + error);
       }
     }
 
@@ -40,10 +38,10 @@ function VideoDetails() {
         const response = await axios.get(
           `${BASE_URL}videos?api_key=${api_key}`
         );
-        console.log("i'm getting video list data from api");
+        
         setVideoList(response.data);
       } catch (error) {
-        console.log("Error getVideoList:" + error);
+        console.error("Error getVideoList:" + error);
       }
     }
     getVideoDetails();

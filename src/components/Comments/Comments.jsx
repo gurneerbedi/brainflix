@@ -10,8 +10,6 @@ export default function Comments({ commentsData = [] }) {
   //have to use an empty array for commentsData because if it's not loaded properly 
   //the commentsData.map runs into an error while waiting
 
-  console.log("rendering...Comments");
-
  
   return (
     <div className="comments__list">
