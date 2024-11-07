@@ -11,8 +11,9 @@ import axios from "axios";
 function VideoDetails() {
   const { objID } = useParams();
   const defaultID = "84e96018-4022-434e-80bf-000ce4cd12b8";
-  const BASE_URL = "https://unit-3-project-api-0a5620414506.herokuapp.com/";
-  const api_key = "e1bce57d-0ebd-4421-9c13-971e9c9fc49e";
+  const BASE_URL = "http://localhost:8800/";
+  // const BASE_URL = "https://unit-3-project-api-0a5620414506.herokuapp.com/";
+  //const api_key = "e1bce57d-0ebd-4421-9c13-971e9c9fc49e";
 
   const [videoDetails, setVideoDetails] = useState([]);
   const [videoList, setVideoList] = useState([]);
@@ -24,7 +25,8 @@ function VideoDetails() {
       try {
         const vidID = objID || defaultID;
         const response = await axios.get(
-          `${BASE_URL}videos/${vidID}?api_key=${api_key}`
+          `${BASE_URL}videos/${vidID}`
+          // `${BASE_URL}videos/${vidID}?api_key=${api_key}`
         );
         
         setVideoDetails(response.data);
@@ -36,7 +38,8 @@ function VideoDetails() {
     async function getVideoList() {
       try {
         const response = await axios.get(
-          `${BASE_URL}videos?api_key=${api_key}`
+          `${BASE_URL}videos`
+          // `${BASE_URL}videos?api_key=${api_key}`
         );
         
         setVideoList(response.data);
