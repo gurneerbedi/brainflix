@@ -7,14 +7,32 @@ import UploadPreview from "../../assets/images/Upload-video-preview.jpg";
 import Header from "../../components/Header/Header";
 import PublishIcon from "../../assets/Icons/publish.svg";
 import { useNavigate } from "react-router";
+import axios from "axios";
+import React, {useState} from "react";
 
-export default function Upload() 
-{
+export default function Upload() {
+  const BASE_URL = "http://localhost:8800";
   const navigate = useNavigate();
-  function UploadAlert() {
-    alert("Your video was uploaded successfully!");
-    navigate("/");
-  } 
+  const [uploadVideo, setUploadVideo] = useState({
+    title: "",
+    description: ""
+  });
+
+  const handleSubmit = (e) => {
+      e.preventDefault();
+      const uploadVideoData ={
+        title: uploadVideo.title,
+        description: uploadVideo.description
+      };
+
+      axios.post(`${BASE_URL}/videos`, uploadVideoData).then((response) => {
+        console.log(response.status, response.data.token);
+        alert("Your video was uploaded successfully!");
+        navigate("/");
+      })
+      .catch((error) => console.error("Error uploadingVideo", error));
+    };
+
   return (
     <>
       <Header></Header>
@@ -35,7 +53,8 @@ export default function Upload()
                 name="form-title-bar"
                 id="form-title-bar"
                 className="upload__form-title"
-                onChange={(e) => setSearchQuery(e.target.value)}
+                value={uploadVideo.title}
+                onChange={(e) => setUploadVideo({...uploadVideo, title: e.target.value})}
                 placeholder="Add a title to your video"
               />
             </div>
@@ -46,7 +65,8 @@ export default function Upload()
                 name="form-description-bar"
                 id="form-description-bar"
                 className="upload__form-description"
-                onChange={(e) => setSearchQuery(e.target.value)}
+                value={uploadVideo.description}
+                onChange={(e) => setUploadVideo({...uploadVideo, description: e.target.value})}
                 placeholder="Add a description to your video"
               />
             </div>
@@ -57,7 +77,7 @@ export default function Upload()
             src={PublishIcon}
             alt="publish-icon"
           />
-          <button className="upload__form-button" onClick={UploadAlert}>PUBLISH</button>
+          <button className="upload__form-button" onClick={handleSubmit}>PUBLISH</button>
           </div>
               <h3 className="upload__form-cancel">CANCEL</h3>
             </div>
