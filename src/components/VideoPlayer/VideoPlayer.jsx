@@ -17,7 +17,8 @@ export default function VideoPlayer({video }) {
       <video
         className="video-player__preview"
         controls
-        poster={video.image}
+        // poster={video.image}
+        poster ={`http://localhost:8800${video.image}`}
       ></video>
       {/* <div className="video-player__controls">
         <img className="video-player__play" src={PlayIcon} alt="play-icon" />

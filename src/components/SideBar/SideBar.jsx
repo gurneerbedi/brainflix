@@ -20,7 +20,7 @@ const SideBar = ({ videos }) => {
         >
           <img
             className="side-bar__thumbnail"
-            src={video.image}
+            src={`http://localhost:8800${video.image}`}
             alt={video.title}
           />
           <div className="side-bar__info">
