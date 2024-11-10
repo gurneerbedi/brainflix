@@ -1,6 +1,4 @@
 import "./SideBar.scss";
-import "../../assets/partials/__global.scss";
-import "../../assets/partials/typography.scss";
 import { useNavigate } from "react-router-dom";
 
 const SideBar = ({ videos }) => {

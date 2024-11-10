@@ -1,8 +1,8 @@
-@use "../../assets/partials/__global" as *;
+@use "../../assets/partials/global";
 @use "../../assets/partials/typography" as *;
 @use "../../assets/partials/fonts" as *;
-@use "../../assets/partials/__variables" as *;
-@use "../../assets/partials/__mixins" as *;
+@use "../../assets/partials/variables" as *;
+@use "../../assets/partials/mixins" as *;
 
 .nav {
   display: flex;
@@ -82,10 +82,10 @@
     width: 1rem;
   }
 
-  &__mohan {
+  &__defaultavatar {
     border-radius: 50%;
     height: 2.25rem;
-    width: 1.875rem;
+    width: 2.25rem;
 
     @include desktop {
       height: 2.5rem;
@@ -102,6 +102,7 @@
     width: 100%;
 
     @include tablet {
+      
       flex-direction: row;
       align-items: center;
     }

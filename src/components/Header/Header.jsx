@@ -1,10 +1,6 @@
-import "../../assets/partials/__global.scss";
-import "../../assets/partials/typography.scss";
-import "../../assets/partials/__variables.scss";
-import "../../assets/partials/__mixins.scss";
+
 import "./Header.scss";
 import { NavLink } from "react-router-dom";
-
 import MohanMuruge from "../../assets/images/Mohan-muruge.jpg";
 import SearchIcon from "../../assets/Icons/search.svg";
 import BrainflixLogo from "../../assets/Logo/BrainFlix-logo.svg";
@@ -31,7 +27,7 @@ export default function Header() {
             src={SearchIcon}
             alt="search-icon"
           />
-          <img className="nav__mohan" src={MohanMuruge} alt="Mohan-muruge" />
+          <img className="nav__defaultavatar" src={MohanMuruge} alt="Mohan-muruge"/>
         </div>
         <div className="nav__button-container">
           <NavLink to= "/video-upload">

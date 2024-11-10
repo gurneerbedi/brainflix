@@ -1,13 +1,8 @@
 import "./VideoPlayer.scss";
-import "../../assets/partials/__global.scss";
-import "../../assets/partials/typography.scss";
-//import VideoPreview from "../../assets/images/Upload-video-preview.jpg";
+import VideoPreview from "../../assets/images/Upload-video-preview.jpg";
 import PlayIcon from "../../assets/Icons/play.svg";
 import ScrubIcon from "../../assets/Icons/scrub.svg";
 import FullscreenIcon from "../../assets/Icons/fullscreen.svg";
-import axios from "axios";
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
 
 export default function VideoPlayer({video }) {
 

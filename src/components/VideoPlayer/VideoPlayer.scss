@@ -1,8 +1,8 @@
-@use "../../assets/partials/__global" as *;
+@use "../../assets/partials/global";
 @use "../../assets/partials/typography" as *;
 @use "../../assets/partials/fonts" as *;
-@use "../../assets/partials/__variables" as *;
-@use "../../assets/partials/__mixins" as *;
+@use "../../assets/partials/variables" as *;
+@use "../../assets/partials/mixins" as *;
 
 .video-player {
   display: flex;

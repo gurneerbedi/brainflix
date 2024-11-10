@@ -1,7 +1,4 @@
-import "../../assets/partials/__global.scss";
-import "../../assets/partials/typography.scss";
-import "../../assets/partials/__variables.scss";
-import "../../assets/partials/__mixins.scss";
+
 import "./Upload.scss";
 import UploadPreview from "../../assets/images/Upload-video-preview.jpg";
 import Header from "../../components/Header/Header";

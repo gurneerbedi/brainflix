@@ -1,11 +1,6 @@
 import "./VideoInfo.scss";
-import "../../assets/partials/__global.scss";
-import "../../assets/partials/typography.scss";
 import LikesIcon from "../../assets/Icons/likes.svg";
 import ViewsIcon from "../../assets/Icons/views.svg";
-import axios from "axios";
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
 
 export default function VideoInfo({ video }) {
 

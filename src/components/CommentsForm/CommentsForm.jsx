@@ -1,6 +1,4 @@
 import "./CommentsForm.scss";
-import "../../assets/partials/__global.scss";
-import "../../assets/partials/typography.scss";
 import MohanMuruge from "../../assets/images/Mohan-muruge.jpg";
 import CommentIcon from "../../assets/Icons/add_comment.svg";
 import { useEffect, useState } from "react";
@@ -41,6 +39,7 @@ export default function CommentsForm({ getVideoDetails }) {
         alt="Mohan-muruge-img"
       />
       <div className="comment__label-container">
+        <form>
         <h1 className="comment__label">JOIN THE CONVERSATION</h1>
         <div className="comment">
           <fieldset className="comment__fieldset">
@@ -65,6 +64,7 @@ export default function CommentsForm({ getVideoDetails }) {
             </button>
           </div>
         </div>
+        </form>
       </div>
     </div>
   );

@@ -30,7 +30,6 @@ function App() {
   }
 
   return (
-    <>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<VideoDetails videoList={videoList} />} />
@@ -40,8 +39,7 @@ function App() {
             element={<VideoDetails videoList={videoList} />}
           />
         </Routes>
-      </BrowserRouter>
-    </>
+      </BrowserRouter> 
   );
 }
 export default App;

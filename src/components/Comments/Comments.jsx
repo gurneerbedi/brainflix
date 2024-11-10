@@ -1,16 +1,8 @@
 import "./Comments.scss";
-import "../../assets/partials/__global.scss";
-import "../../assets/partials/typography.scss";
 import { formatDistanceToNow } from "date-fns";
-import axios from "axios";
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-
 export default function Comments({ commentsData = [] }) {
   //have to use an empty array for commentsData because if it's not loaded properly 
   //the commentsData.map runs into an error while waiting
-
- 
   return (
     <div className="comments__list">
       {commentsData.map((comment) => (
@@ -24,8 +16,6 @@ export default function Comments({ commentsData = [] }) {
                   formatDistanceToNow(new Date(comment.timestamp), {
                     addSuffix: true,
                   })}
-
-                {/* {new Date(comment.timestamp).toLocaleDateString()} */}
               </div>
             </div>
             <p className="comment__comment">{comment.comment}</p>
