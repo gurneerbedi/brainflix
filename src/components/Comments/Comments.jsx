@@ -1,8 +1,10 @@
 import "./Comments.scss";
 import { formatDistanceToNow } from "date-fns";
-export default function Comments({ commentsData = [] }) {
+export default function Comments({ commentsData = [], handleCommentDelete }) {
   //have to use an empty array for commentsData because if it's not loaded properly 
   //the commentsData.map runs into an error while waiting
+
+  
   return (
     <div className="comments__list">
       {commentsData.map((comment) => (
@@ -19,6 +21,7 @@ export default function Comments({ commentsData = [] }) {
               </div>
             </div>
             <p className="comment__comment">{comment.comment}</p>
+            <button className = "comment__delete-button" onClick={() => handleCommentDelete(comment.id)}>Delete</button>
           </div>
         </article>
       ))}

@@ -62,4 +62,26 @@
   &__comment {
     margin: 0;
   }
+
+&__delete-button{
+  background-color: #0095ff; //Brainflix-blue
+    border-color: white;
+    color: white;
+    height: 2.5rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    border-radius: 4px;
+    @include mobile__buttons-labels;
+    position: relative;
+    z-index: 1;
+    padding-left: 2rem;
+
+    &:hover {
+      background: #0065ad; //Brainflix-darkblue
+    }
+    @include tablet {
+      width: auto;
+    }
+}
+
 }

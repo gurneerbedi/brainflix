@@ -44,6 +44,22 @@ function VideoDetails({ videoList }) {
   const videoDetailsComments = videoDetails.comments;
   //note to refactor the code and use one page component for video-details + homepage
   //sidebar will only render if objID doesn't exist, ie !objID returns true if objID is undefined so true && true will render the sidebar
+  
+
+
+  //delete a comment function 
+  async function handleCommentDelete(commentId){
+    try{
+      console.log("deleting comment id", commentId, "for vid", objID);
+      await axios.delete(`${BASE_URL}videos/${objID}/comments/${commentId}`);
+      setVideoDetails({...videoDetails, comments: videoDetails.comments.filter((comment)=> comment.id !== commentId),
+      });
+    }
+    catch(error){
+      console.error("Error handleCommentDelete");
+    }
+  }
+
   if (!videoDetails) {
     return (
       <div>
@@ -71,7 +87,7 @@ function VideoDetails({ videoList }) {
             />
           </div>
           <div className="component__comments-info">
-            <Comments commentsData={videoDetailsComments} />
+            <Comments commentsData={videoDetailsComments} handleCommentDelete ={handleCommentDelete} />
           </div>
           {showSideBar && (
             <div className="component__side-bar">
