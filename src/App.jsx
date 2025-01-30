@@ -5,7 +5,7 @@ import VideoDetails from "./pages/VideoDetails/VideoDetails";
 import { useState, useEffect } from "react";
 import axios from "axios";
 function App() {
-  const BASE_URL = "http://localhost:8800/";
+  const BASE_URL = "https://gurneerbedi-brainflix-backend.vercel.app/";
   const [videoList, setVideoList] = useState([]);
 
   async function getVideoList() {
