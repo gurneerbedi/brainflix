@@ -10,7 +10,7 @@ import axios from "axios";
 
 function VideoDetails({ videoList }) {
   let { objID } = useParams();
-  const BASE_URL = "http://localhost:8800/";
+  const BASE_URL = "https://gurneerbedi-brainflix-backend.vercel.app/";
 
   const [videoDetails, setVideoDetails] = useState([]);
   if (!objID) {

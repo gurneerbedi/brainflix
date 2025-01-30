@@ -7,7 +7,7 @@ import { useParams } from "react-router-dom";
 
 export default function CommentsForm({ getVideoDetails }) {
   const { objID } = useParams();
-  const BASE_URL = "http://localhost:8800/";
+  const BASE_URL = "https://gurneerbedi-brainflix-backend.vercel.app/";
 
   const [commentInput, setCommentInput] = useState("");
 
